@@ -82,8 +82,6 @@ export default function Hero() {
     }
 
     return () => clearTimeout(timer)
-    // codeSets is stable and external, we intentionally exclude it from deps
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted, charIndex, deleting, setIndex])
 
   // scroll console to bottom when typing (small UX nicety)

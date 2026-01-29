@@ -12,7 +12,7 @@ export default function About() {
       />
       <h2 className="text-4xl font-bold mt-6">About Me</h2>
       <p className="text-gray-400 mt-4 max-w-3xl mx-auto">
-        I'm Chiranjeevi Joshi — a Software Engineer with hands-on experience in AI/ML and full-stack development. Currently, I am co-founding HealifyAI, where I architect production-ready systems for medical data processing. I enjoy turning research into reliable products, optimizing model inference, and designing clean, maintainable systems.
+        I&apos;m Chiranjeevi Joshi — a Software Engineer with hands-on experience in AI/ML and full-stack development. Currently, I am co-founding HealifyAI, where I architect production-ready systems for medical data processing. I enjoy turning research into reliable products, optimizing model inference, and designing clean, maintainable systems.
       </p>
     </div>
   )
