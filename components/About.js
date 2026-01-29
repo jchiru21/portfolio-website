@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div id="about me" className="max-w-5xl mx-auto py-20 px-6 text-center">
       <motion.img
-        src="/chiranjeevi.jpeg"   // add your avatar image in /public
+        src="/Chiranjeevi.png"   // add your avatar image in /public
         alt="Chiranjeevi Avatar"
         className="w-32 h-32 mx-auto rounded-full glass-card"
         animate={{ y: [0, -10, 0] }}
