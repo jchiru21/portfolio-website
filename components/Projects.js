@@ -6,6 +6,19 @@ import { Github, ExternalLink } from "lucide-react"
 export default function Projects() {
   const projects = [
     {
+      title: "HealifyAI (Medical Intelligence Platform)",
+      subtitle: "AI/ML & Full-Stack",
+      tech: ["React", "Flask", "Docker", "LLMs", "PostgreSQL"],
+      year: "2025",
+      image: "/images/project3.png",
+      github: "https://github.com/HealifyAI",
+      achievements: [
+        "A comprehensive AI platform for processing unstructured medical reports.",
+        "Features a custom consistency-check pipeline to prevent hallucinations and ensure clinical accuracy.",
+        "Currently in Stealth/Beta with production-ready deployment infrastructure."
+      ]
+    },
+    {
       title: "Ecom Chat — API",
       subtitle: "Dev Tooling & Networking",
       tech: ["Node.js", "TypeScript", "Docker", "Prisma", "PostgreSQL", "Redis"],

@@ -1,7 +1,9 @@
 // components/Navbar.js
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
-import { Link } from "react-scroll"
+import { Link as ScrollLink } from "react-scroll"
+import Link from "next/link"
+import { useRouter } from "next/router"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Sun, Moon } from "lucide-react"
 
@@ -10,6 +12,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const router = useRouter()
+  const isHomePage = router.pathname === '/'
 
   useEffect(() => {
     setMounted(true)
@@ -21,7 +25,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const links = ["Home", "About Me", "Skills", "Projects", "Experience", "Education", "Contact"]
+  const scrollLinks = ["Home", "About Me", "Skills", "Experience", "Education", "Contact"]
 
   return (
     <nav
@@ -34,22 +38,33 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
         {/* Logo */}
-        <Link
-          to="home"
-          smooth={true}
-          offset={-70}
-          duration={600}
-          className="w-12 h-12 flex items-center justify-center rounded-full 
-                     bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold text-lg 
-                     cursor-pointer shadow-md hover:scale-105 transition"
-        >
-          CJ
-        </Link>
+        {isHomePage ? (
+          <ScrollLink
+            to="home"
+            smooth={true}
+            offset={-70}
+            duration={600}
+            className="w-12 h-12 flex items-center justify-center rounded-full 
+                       bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold text-lg 
+                       cursor-pointer shadow-md hover:scale-105 transition"
+          >
+            CJ
+          </ScrollLink>
+        ) : (
+          <Link
+            href="/"
+            className="w-12 h-12 flex items-center justify-center rounded-full 
+                       bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold text-lg 
+                       cursor-pointer shadow-md hover:scale-105 transition"
+          >
+            CJ
+          </Link>
+        )}
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-6 text-[var(--text-primary)]">
-          {links.map((item) => (
-            <Link
+          {scrollLinks.map((item) => (
+            <ScrollLink
               key={item}
               to={item.toLowerCase().replace(/\s+/g, "")}
               spy={true}
@@ -60,8 +75,16 @@ export default function Navbar() {
               className="cursor-pointer text-sm font-medium hover:text-blue-600 dark:hover:text-blue-300 transition"
             >
               {item}
-            </Link>
+            </ScrollLink>
           ))}
+          
+          {/* Projects Link - Routes to separate page */}
+          <Link
+            href="/projects"
+            className="cursor-pointer text-sm font-medium hover:text-blue-600 dark:hover:text-blue-300 transition"
+          >
+            Projects
+          </Link>
         </div>
 
         {/* Theme Toggle */}
@@ -95,19 +118,28 @@ export default function Navbar() {
             className="md:hidden bg-[var(--bg-secondary)]/60 backdrop-blur-sm"
           >
             <div className="flex flex-col items-center gap-6 py-6 text-[var(--text-primary)]">
-              {links.map((item) => (
-                <Link
+              {scrollLinks.map((item) => (
+                <ScrollLink
                   key={item}
                   to={item.toLowerCase().replace(/\s+/g, "")}
                   smooth={true}
                   offset={-70}
                   duration={600}
                   className="cursor-pointer text-lg font-medium hover:text-blue-600 dark:hover:text-blue-300 transition"
-                  onClick={() => setMenuOpen(false)} // close menu after click
+                  onClick={() => setMenuOpen(false)}
                 >
                   {item}
-                </Link>
+                </ScrollLink>
               ))}
+              
+              {/* Projects Link */}
+              <Link
+                href="/projects"
+                className="cursor-pointer text-lg font-medium hover:text-blue-600 dark:hover:text-blue-300 transition"
+                onClick={() => setMenuOpen(false)}
+              >
+                Projects
+              </Link>
 
               {/* Mobile Theme Toggle */}
               <button

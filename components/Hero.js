@@ -115,7 +115,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.45, duration: 0.7 }}
       >
-        Software Developer
+        Co-Founder @ HealifyAI | Full-Stack AI Engineer
       </motion.p>
 
       {/* Typing Console */}

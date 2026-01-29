@@ -1,9 +1,8 @@
 import { motion } from "framer-motion"
-import { Code, Database, Cpu, Wrench } from "lucide-react"
+import { Code, Database, Cpu, Wrench, Cloud, Sparkles } from "lucide-react"
 import {
   SiJavascript,
   SiPython,
-  SiCplusplus,
   SiMysql,
   SiPostgresql,
   SiPrisma,
@@ -29,9 +28,9 @@ export default function Skills() {
       title: "Languages",
       icon: <Code size={22} />,
       list: [
-        { name: "JavaScript", logo: <SiJavascript size={iconSize} /> },
         { name: "Python", logo: <SiPython size={iconSize} /> },
-        { name: "C++", logo: <SiCplusplus size={iconSize} /> },
+        { name: "JavaScript", logo: <SiJavascript size={iconSize} /> },
+        { name: "TypeScript", logo: <Code size={iconSize} className="text-blue-500" /> },
         { name: "SQL", logo: <SiMysql size={iconSize} /> }
       ]
     },
@@ -39,35 +38,36 @@ export default function Skills() {
       title: "Web/Systems",
       icon: <Database size={22} />,
       list: [
-        { name: "Node.js", logo: <SiNodedotjs size={iconSize} /> },
         { name: "React", logo: <SiReact size={iconSize} /> },
+        { name: "Node.js", logo: <SiNodedotjs size={iconSize} /> },
         { name: "Express", logo: <SiExpress size={iconSize} /> },
         { name: "Flask", logo: <SiFlask size={iconSize} /> },
-        { name: "REST APIs", logo: <SiExpress size={iconSize} /> },
         { name: "Docker", logo: <SiDocker size={iconSize} /> },
-        { name: "Linux", logo: <SiLinux size={iconSize} /> }
+        { name: "AWS", logo: <Cloud size={iconSize} className="text-orange-500" /> },
+        { name: "Linux", logo: <SiLinux size={iconSize} /> },
+        { name: "REST APIs", logo: <SiExpress size={iconSize} /> }
       ]
     },
     {
-      title: "ML/Tools",
+      title: "AI/ML",
       icon: <Cpu size={22} />,
       list: [
         { name: "PyTorch", logo: <SiPytorch size={iconSize} /> },
         { name: "TensorFlow", logo: <SiTensorflow size={iconSize} /> },
         { name: "Hugging Face", logo: <SiHuggingface size={iconSize} /> },
-        { name: "Computer Vision", logo: <SiOpencv size={iconSize} /> },
-        { name: "NLP", logo: <SiHuggingface size={iconSize} /> }, // reuse huggingface icon for NLP
+        { name: "LLMs / GenAI", logo: <Sparkles size={iconSize} className="text-purple-500" /> },
+        { name: "OpenCV", logo: <SiOpencv size={iconSize} /> },
+        { name: "NLP", logo: <SiHuggingface size={iconSize} /> },
         { name: "Git", logo: <SiGit size={iconSize} /> }
       ]
     },
     {
-      title: "Databases & DevOps",
+      title: "Databases",
       icon: <Wrench size={22} />,
       list: [
-        { name: "MySQL", logo: <SiMysql size={iconSize} /> },
         { name: "PostgreSQL", logo: <SiPostgresql size={iconSize} /> },
-        { name: "Prisma", logo: <SiPrisma size={iconSize} /> },
-        { name: "Redis", logo: <SiRedis size={iconSize} /> }
+        { name: "Redis", logo: <SiRedis size={iconSize} /> },
+        { name: "Prisma", logo: <SiPrisma size={iconSize} /> }
       ]
     }
   ]

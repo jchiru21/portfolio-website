@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Skills from "../components/Skills"
-import Projects from "../components/Projects"
+import FeaturedProjects from "../components/FeaturedProjects"
 import Publications from "../components/Publications"
 import Coursework from "../components/Coursework"
 import Experience from "../components/Experience"
@@ -13,7 +13,6 @@ import Education from "../components/Education"
 import Contact from "../components/Contact"
 import Footer from "../components/Footer"
 import ScrollToTop from "../components/ScrollToTop"
-import SocialSidebar from "../components/SocialSidebar"
 
 export default function Home() {
   return (
@@ -27,8 +26,7 @@ export default function Home() {
       </Head>
 
       <main className="bg-[var(--bg-primary)] text-[var(--text-primary)] min-h-screen">
-        <Navbar />
-        <SocialSidebar /> 
+        <Navbar /> 
 
         {/* Hero */}
         <section id="home" className="py-20 px-6">
@@ -39,12 +37,9 @@ export default function Home() {
         <section id="aboutme" className="py-20 px-6">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 glass-card p-6">
             {/* Avatar */}
-            <motion.video
-              src="/Avatar.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
+            <motion.img
+              src="/chiranjeevi.jpeg"
+              alt="Chiranjeevi Avatar"
               className="w-40 h-40 rounded-full p-1 ring-2 ring-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.6)]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -64,12 +59,12 @@ export default function Home() {
 
               <div className="mt-4 flex gap-3">
                 <a
-                  href="/SWE_Chiranjeevi_Resume.pdf"
+                  href="/chiranjeevi_joshi_resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-blue-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300"
                 >
-                  View Resume
+                  Download Resume
                 </a>
                 <a
                   href="#contact"
@@ -92,7 +87,7 @@ export default function Home() {
         {/* Projects */}
         <section id="projects" className="py-20 px-6">
           <div className="max-w-6xl mx-auto glass-card p-6">
-            <Projects />
+            <FeaturedProjects />
 
             {/* Publications */}
             <Publications />

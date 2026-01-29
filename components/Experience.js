@@ -3,6 +3,16 @@ import { motion } from "framer-motion"
 export default function Experience() {
   const experience = [
     {
+      role: "Co-Founder & Lead Engineer",
+      company: "HealifyAI (Bootstrapped Venture)",
+      duration: "Nov 2025 – Present",
+      details: [
+        "Architected a scalable AI medical intelligence platform using React, Flask, and LLMs.",
+        "Engineered a custom NLP pipeline with automated consistency checks to validate unstructured medical reports.",
+        "Containerized the full stack with Docker for reproducible, cloud-ready deployment."
+      ]
+    },
+    {
       role: "Full-Stack Developer Intern",
       company: "Codegnan Destination",
       duration: "Feb 2024 – Mar 2024",

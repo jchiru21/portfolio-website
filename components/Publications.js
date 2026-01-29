@@ -40,19 +40,19 @@ const Publications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="glass-card p-6 hover:border-blue-500/50 transition-all"
+              className="glass-card p-6 hover:border-blue-500/50 transition-all h-auto"
             >
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-blue-500/10 rounded-lg">
+                <div className="p-3 bg-blue-500/10 rounded-lg flex-shrink-0">
                   <FileText className="w-6 h-6 text-blue-500" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-2">{pub.title}</h3>
-                  <p className="text-gray-400 mb-2">{pub.authors}</p>
-                  <p className="text-sm text-gray-500 mb-3">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-xl font-bold mb-2 break-words">{pub.title}</h3>
+                  <p className="text-gray-400 mb-2 break-words">{pub.authors}</p>
+                  <p className="text-sm text-gray-500 mb-3 break-words">
                     {pub.journal} • {pub.year} • {pub.volume}
                   </p>
-                  <p className="text-gray-300 mb-4">{pub.abstract}</p>
+                  <p className="text-gray-300 mb-4 break-words">{pub.abstract}</p>
                   <a
                     href={pub.link}
                     target="_blank"
