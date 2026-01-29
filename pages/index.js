@@ -38,7 +38,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 glass-card p-6">
             {/* Avatar */}
             <motion.img
-              src="/chiranjeevi.jpeg"
+              src="/Chiranjeevi.png"
               alt="Chiranjeevi Avatar"
               className="w-40 h-40 rounded-full p-1 ring-2 ring-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.6)]"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -59,7 +59,7 @@ export default function Home() {
 
               <div className="mt-4 flex gap-3">
                 <a
-                  href="/chiranjeevi_joshi_resume.pdf"
+                  href="/Chiranjeevi_Joshi_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-blue-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300"

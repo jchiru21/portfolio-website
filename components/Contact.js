@@ -10,7 +10,12 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    if (publicKey) {
+      emailjs.init(publicKey)
+    } else {
+      console.error("EmailJS public key is not set")
+    }
   }, [])
 
   const handleChange = (e) => {
