@@ -4,15 +4,15 @@ import { FileText, ExternalLink } from "lucide-react"
 const Publications = () => {
   const publications = [
     {
-      title: "Smart Toll Collection System Using RFID Technology",
+      title: "Summarization and Translation using NLP",
       authors: "Chiranjeevi J, et al.",
       journal: "International Journal for Research in Applied Science & Engineering Technology (IJRASET)",
       year: "2024",
-      volume: "Volume 12, Issue 1",
-      doi: "10.22214/ijraset.2024.58008",
-      link: "https://doi.org/10.22214/ijraset.2024.58008",
+      volume: "Volume 12, Issue 5",
+      doi: "10.22214/ijraset.2024.61391",
+      link: "https://doi.org/10.22214/ijraset.2024.61391",
       abstract:
-        "Developed an automated toll collection system using RFID technology to reduce traffic congestion and improve efficiency at toll booths.",
+        "Reviewed and implemented transformer-based models for text summarization. Analyzed the efficiency of attention mechanisms in processing large-scale language datasets.",
     },
   ]
 
