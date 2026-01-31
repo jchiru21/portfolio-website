@@ -1,4 +1,4 @@
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 Clone the repository and install dependencies:
 
@@ -18,7 +18,7 @@ Now open **[http://localhost:3000/](http://localhost:3000/)** in your browser.
 
 ---
 
-## ⚙️ Customization
+## Customization
 
 1. **Edit Personal Info**
 
@@ -41,7 +41,7 @@ Now open **[http://localhost:3000/](http://localhost:3000/)** in your browser.
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 Deploy to **Vercel** in one click:
 
@@ -58,7 +58,7 @@ https://your-username.vercel.app
 
 ---
 
-## 📂 Folder Structure
+## Folder Structure
 
 ```
 portfolio/
@@ -72,17 +72,14 @@ portfolio/
 
 ---
 
-## 📜 License
+## License
 
 This project is open-source under the **MIT License**.
 You are free to use, modify, and distribute it. Attribution is appreciated but not required.
 
 ---
 
-## 🌐 Live Example
+## Live Example
 
-🔗 **Demo Portfolio:** [View Here](https://portfolio-git-main-jchiru21s-projects.vercel.app?_vercel_share=sD0dmYYzolY9SRx7gMeXZnoxgdmRdowu)
+**Demo Portfolio:** [View Here](https://chiranjeevi-j.vercel.app/)
 
----
-
-👉 Fork it, customize it, and launch your **personal portfolio website** in minutes!
