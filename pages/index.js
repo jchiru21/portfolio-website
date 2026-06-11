@@ -21,7 +21,7 @@ export default function Home() {
         <title>Chiranjeevi Joshi — Portfolio</title>
         <meta
           name="description"
-          content="Portfolio of Chiranjeevi Joshi — Software Engineer, AI/ML & Full-Stack"
+          content="Portfolio of Chiranjeevi Joshi, AI/ML Engineer. Founding Engineer @ HealifyAI: production LLM serving, evals, and medical AI in 8 Indian languages."
         />
       </Head>
 
@@ -62,13 +62,13 @@ export default function Home() {
                   href="/Chiranjeevi_Joshi_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-blue-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300"
+                  className="px-4 py-2 bg-blue-600 rounded-lg text-white font-semibold shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
                 >
                   Download Resume
                 </a>
                 <a
                   href="#contact"
-                  className="px-4 py-2 bg-gray-800 rounded-lg text-gray-200 font-semibold shadow-lg hover:shadow-gray-500/50 hover:scale-105 transition-all duration-300"
+                  className="px-4 py-2 bg-gray-800 rounded-lg text-gray-200 font-semibold shadow-lg hover:shadow-gray-500/50 transition-all duration-300"
                 >
                   Contact
                 </a>

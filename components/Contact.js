@@ -53,7 +53,7 @@ export default function Contact() {
   }
   return (
     <div id="contact" className="max-w-6xl mx-auto py-20 px-6">
-      <h2 className="text-4xl font-bold mb-12 text-center text-white">📬 Let’s Connect</h2>
+      <h2 className="text-4xl font-bold mb-12 text-center text-white">Let’s Connect</h2>
 
       <div className="grid md:grid-cols-2 gap-6 items-stretch">
         {/* Direct Contact Form */}

@@ -1,7 +1,7 @@
 // components/AllProjects.js
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Github } from "lucide-react"
+import { Github, ExternalLink } from "lucide-react"
 import { projectsData } from "../data/projectsData"
 
 export default function AllProjects() {
@@ -81,8 +81,8 @@ export default function AllProjects() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600/20 hover:bg-blue-600/40 text-blue-600 dark:text-blue-400 transition font-medium text-sm"
                     >
-                      <Github size={16} />
-                      GitHub
+                      {proj.github.includes("github.com") ? <Github size={16} /> : <ExternalLink size={16} />}
+                      {proj.github.includes("github.com") ? "GitHub" : "Live Site"}
                     </a>
                   </div>
                 </div>

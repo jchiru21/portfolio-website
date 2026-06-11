@@ -6,14 +6,14 @@ export const projectsData = [
     id: "healifyai",
     title: "HealifyAI (Medical Intelligence Platform)",
     subtitle: "AI/ML & Full-Stack",
-    tech: ["React", "Flask", "Docker", "LLMs", "PostgreSQL"],
+    tech: ["FastAPI", "vLLM", "React Native", "PostgreSQL", "Docker"],
     year: "2025",
     image: "/images/healifyai.png",
-    github: "https://github.com/healifyai/healifyai",
+    github: "https://healifyai.in",
     achievements: [
-      "A comprehensive AI platform for processing unstructured medical reports.",
-      "Features a custom consistency-check pipeline to prevent hallucinations and ensure clinical accuracy.",
-      "Currently in Stealth/Beta with production-ready deployment infrastructure."
+      "A medical AI platform that explains lab reports in 8 Indian languages. Live in production with external users.",
+      "Clinical evaluation harness with human-verified gold standards and automated regression on every change; template-based medical logic that cannot hallucinate.",
+      "Built on vLLM serving Qwen3.5-9B, an OCR pipeline for messy Indian lab formats, a FastAPI backend, and a React Native mobile app."
     ]
   },
   {
@@ -25,9 +25,9 @@ export const projectsData = [
     image: "/images/project3.png",
     github: "https://github.com/jchiru21/ecommerce-chat-platform",
     achievements: [
-      "Improved CI reliability to 95% by resolving dependency issues and stabilizing builds across environments.",
-      "Deployed API and services on AWS EC2 using Docker Compose, enabling one-command releases and reliable uptime.",
-      "Increased observability with monitoring hooks, cutting debugging effort and accelerating issue resolution by nearly 3x."
+      "Multi-service e-commerce chat platform: TypeScript, Prisma, and PostgreSQL backend with live WebSocket messaging.",
+      "Deployed API and services on AWS EC2 using Docker Compose for one-command releases.",
+      "Containerized the full stack with monitoring hooks for easier debugging across environments."
     ]
   },
   {
@@ -39,9 +39,9 @@ export const projectsData = [
     image: "/images/project2.png",
     github: "https://github.com/jchiru21/intelligent-text-processor",
     achievements: [
-      "Improved summary accuracy with 15% fewer unsupported entities by training a triplet-based reranker with BM25 negatives.",
-      "Developed a Flask API and web UI integrated with GPU workflows, accelerating experiment turnaround times.",
-      "Tuned entailment thresholds (0.8 vs 0.9), reducing fallback cases by 10% in Conservative presets."
+      "NLP suite for abstractive summarization and Q&A, built with BART and RoBERTa.",
+      "Integrated hallucination filtering to keep generated summaries grounded in the source text.",
+      "Served through a Flask API with an interactive web UI."
     ]
   },
   {
@@ -53,23 +53,22 @@ export const projectsData = [
     image: "/images/project1.png",
     github: "https://github.com/jchiru21/idd-segformer-segmentation",
     achievements: [
-      "Achieved 50% mIoU on Indian driving scenes by fine-tuning SegFormer on the IDD dataset with a small research team.",
-      "Built 7k+ training and 900+ validation samples by converting polygon annotations to pixel masks for large-scale experiments.",
-      "Doubled GPU throughput with mixed precision training and automated evaluation, streamlining workflows and boosting efficiency."
+      "Fine-tuned SegFormer (MiT-B5) on the IDD dataset, reaching ~50% mIoU on unstructured Indian driving scenes.",
+      "Built 7k+ training and 900+ validation samples by converting polygon annotations to pixel masks.",
+      "Used mixed-precision training and automated evaluation to roughly double GPU throughput."
     ]
   },
   {
     id: "text-summarization",
     title: "Abstractive Summariser",
     subtitle: "NLP",
-    tech: ["Python", "BERT", "Flask"],
-    year: "2023",
+    tech: ["Python", "T5", "Hugging Face", "Flask"],
+    year: "2025",
     image: "/images/project4.png",
     github: "https://github.com/jchiru21/abstractive-summarizer",
     achievements: [
-      "Built multilingual summarization system using BERT for accurate text condensation.",
-      "Developed Flask API with interactive web UI for easy access and experimentation.",
-      "Supports multiple languages with consistent performance across different text domains."
+      "Fine-tuned T5 for abstractive summarization and translation across multiple languages.",
+      "Served via Flask REST APIs with an interactive web UI."
     ]
   }
 ]

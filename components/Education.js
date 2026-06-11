@@ -17,7 +17,7 @@ export default function Education() {
   return (
     <div id="education" className="bg-gray-950 py-20 px-6">
       <h2 className="text-4xl font-bold mb-12 text-center text-white">
-        🎓 Education
+        Education
       </h2>
 
       <div className="max-w-3xl mx-auto grid gap-8 text-center">

@@ -46,7 +46,7 @@ export default function Navbar() {
             duration={600}
             className="w-12 h-12 flex items-center justify-center rounded-full 
                        bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold text-lg 
-                       cursor-pointer shadow-md hover:scale-105 transition"
+                       cursor-pointer shadow-md transition"
           >
             CJ
           </ScrollLink>
@@ -55,7 +55,7 @@ export default function Navbar() {
             href="/"
             className="w-12 h-12 flex items-center justify-center rounded-full 
                        bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold text-lg 
-                       cursor-pointer shadow-md hover:scale-105 transition"
+                       cursor-pointer shadow-md transition"
           >
             CJ
           </Link>

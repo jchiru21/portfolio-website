@@ -2,38 +2,27 @@
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 
-// stable code sets
+// stable code sets — real snippets from the production stack
 const codeSets = [
   [
-    "def build_future(ai, code):",
-    "    return ai + code + ' 🚀'",
-    "print(build_future('ML', 'Engineering'))"
+    "from vllm import LLM, SamplingParams",
+    "llm = LLM(model='Qwen3.5-9B', quantization='fp4')",
+    "out = llm.generate(prompt, SamplingParams(max_tokens=512))"
   ],
   [
-    "class Developer:",
-    "    def __init__(self, name):",
-    "        self.name = 'Chiranjeevi Joshi'"
+    "results = harness.run(gold_standards)",
+    "# 32 human-verified reports, 9 lab formats",
+    "assert results.mean >= 0.971, 'regression caught'"
   ],
   [
-    "import torch",
-    "model = torch.nn.Transformer()",
-    "print('Optimizing AI Inference ⚡')"
+    "findings = parser.extract(report_page)",
+    "if guard.flags(findings):",
+    "    escalate(findings)  # never soften a serious finding"
   ],
   [
-    "for skill in ['Python', 'AI/ML', 'Full-Stack']:",
-    "    print(f'Leveling up {skill} ✅')",
-    "print('Ready for Challenges! 🔥')"
-  ],
-  [
-    "function innovate(tech) {",
-    "  return `${tech} at scale 🚀`; }",
-    "console.log(innovate('AI/ML'));"
-  ],
-  [
-    "int main() {",
-    "  cout << \"Engineering the Future 🚀\" << endl;",
-    "  return 0;",
-    "}"
+    "text = ocr.read(page)",
+    "if text.confidence < THRESHOLD:",
+    "    text = vlm_fallback(page)"
   ]
 ]
 
@@ -99,7 +88,7 @@ export default function Hero() {
     >
       {/* Heading */}
       <motion.h1
-        className="text-[3.2rem] sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600 leading-tight"
+        className="text-[3.2rem] sm:text-6xl font-extrabold text-[var(--text-primary)] tracking-tight leading-tight"
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
@@ -113,7 +102,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.45, duration: 0.7 }}
       >
-        Co-Founder @ HealifyAI | Full-Stack AI Engineer
+        Founding Engineer @ HealifyAI | AI/ML Engineer
       </motion.p>
 
       {/* Typing Console */}

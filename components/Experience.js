@@ -3,13 +3,13 @@ import { motion } from "framer-motion"
 export default function Experience() {
   const experience = [
     {
-      role: "Co-Founder & Lead Engineer",
-      company: "HealifyAI (Bootstrapped Venture)",
+      role: "Founding Engineer",
+      company: "HealifyAI",
       duration: "Nov 2025 – Present",
       details: [
-        "Architected a scalable AI medical intelligence platform using React, Flask, and LLMs.",
-        "Engineered a custom NLP pipeline with automated consistency checks to validate unstructured medical reports.",
-        "Containerized the full stack with Docker for reproducible, cloud-ready deployment."
+        "Building HealifyAI, a medical AI platform that explains lab reports in 8 Indian languages. Live in production with real users.",
+        "Co-built the inference and extraction pipeline (vLLM serving Qwen3.5-9B, OCR for messy Indian lab formats) and the clinical eval harness with automated regression on every change.",
+        "Built the React Native + Expo mobile app and own patient safety: guardrails that catch the model softening serious findings into reassurance."
       ]
     },
     {
@@ -26,8 +26,8 @@ export default function Experience() {
       company: "LANGUIFY (Coincent)",
       duration: "Sep 2022 – Nov 2022",
       details: [
-        "Trained digit classification model (MNIST) with TensorFlow, achieving 92% accuracy.",
-        "Performed hyperparameter tuning and deployed live demo for real-time predictions."
+        "Trained and evaluated image classification models with TensorFlow; first hands-on exposure to the full ML workflow.",
+        "Performed hyperparameter tuning and deployed a live demo for real-time predictions."
       ]
     }
   ]
@@ -35,7 +35,7 @@ export default function Experience() {
   return (
     <div id="experience" className="max-w-6xl mx-auto py-20 px-6">
       <h2 className="text-4xl font-bold mb-12 text-center text-white">
-        💼 Experience
+        Experience
       </h2>
       <div className="relative border-l border-gray-700 ml-4">
         {experience.map((exp, idx) => (
@@ -44,7 +44,7 @@ export default function Experience() {
             className="mb-10 ml-6"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            ransition={{ duration: 0.6, delay: idx * 0.2 }}
+            transition={{ duration: 0.6, delay: idx * 0.2 }}
 
             viewport={{ once: true }}
           >

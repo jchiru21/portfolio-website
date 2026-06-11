@@ -6,15 +6,14 @@ import {
   SiMysql,
   SiPostgresql,
   SiPrisma,
-  SiRedis,
   SiReact,
   SiNodedotjs,
   SiExpress,
   SiFlask,
+  SiFastapi,
   SiDocker,
   SiLinux,
   SiPytorch,
-  SiTensorflow,
   SiHuggingface,
   SiOpencv,
   SiGit
@@ -41,6 +40,7 @@ export default function Skills() {
         { name: "React", logo: <SiReact size={iconSize} /> },
         { name: "Node.js", logo: <SiNodedotjs size={iconSize} /> },
         { name: "Express", logo: <SiExpress size={iconSize} /> },
+        { name: "FastAPI", logo: <SiFastapi size={iconSize} /> },
         { name: "Flask", logo: <SiFlask size={iconSize} /> },
         { name: "Docker", logo: <SiDocker size={iconSize} /> },
         { name: "AWS", logo: <Cloud size={iconSize} className="text-orange-500" /> },
@@ -53,7 +53,7 @@ export default function Skills() {
       icon: <Cpu size={22} />,
       list: [
         { name: "PyTorch", logo: <SiPytorch size={iconSize} /> },
-        { name: "TensorFlow", logo: <SiTensorflow size={iconSize} /> },
+        { name: "vLLM / LLM Serving", logo: <Cpu size={iconSize} className="text-purple-500" /> },
         { name: "Hugging Face", logo: <SiHuggingface size={iconSize} /> },
         { name: "LLMs / GenAI", logo: <Sparkles size={iconSize} className="text-purple-500" /> },
         { name: "OpenCV", logo: <SiOpencv size={iconSize} /> },
@@ -66,7 +66,7 @@ export default function Skills() {
       icon: <Wrench size={22} />,
       list: [
         { name: "PostgreSQL", logo: <SiPostgresql size={iconSize} /> },
-        { name: "Redis", logo: <SiRedis size={iconSize} /> },
+        { name: "Neo4j", logo: <Database size={iconSize} className="text-green-500" /> },
         { name: "Prisma", logo: <SiPrisma size={iconSize} /> }
       ]
     }
@@ -75,13 +75,13 @@ export default function Skills() {
   return (
     <div id="skills" className="max-w-6xl mx-auto py-20 px-6">
       <h2 className="text-4xl font-bold mb-12 text-center text-white">
-        🚀 Skills & Technologies
+        Skills & Technologies
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {skills.map((s, idx) => (
           <motion.div
             key={s.title}
-            className="p-6 rounded-xl bg-gray-800 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-transparent hover:border-blue-500"
+            className="p-6 rounded-xl bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 border border-transparent hover:border-blue-500"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: idx * 0.15 }}
