@@ -1,82 +1,101 @@
 // components/FeaturedProjects.js
-import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 import { projectsData } from "../data/projectsData"
 
+const pad = (n) => (n < 10 ? "0" : "") + n
+const ArrowOut = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M7 17 17 7" />
+    <path d="M7 7h10v10" />
+  </svg>
+)
+
 export default function FeaturedProjects() {
-  // Show only first 4 projects
-  const featuredProjects = projectsData.slice(0, 4)
+  const featured = projectsData.slice(0, 4)
 
   return (
-    <div id="projects" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center text-[var(--text-primary)]">
-          Featured Projects
-        </h2>
+    <section className="section" id="projects" data-screen-label="Featured Projects">
+      <div className="sec-grid">
+        <div className="sec-marker">
+          <span className="eyebrow" data-decode="// work">{"// work"}</span>
+        </div>
+        <div>
+          <h2 className="sec-title r">
+            Featured <span className="si">Projects</span>
+          </h2>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {featuredProjects.map((proj, idx) => (
-            <Link key={proj.id} href="/projects" scroll={true}>
-              <motion.div
-                className="group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
+          {featured.map((proj, idx) => {
+            const isLive = !proj.github.includes("github.com")
+            return (
+              <article
+                className={`proj${idx % 2 === 1 ? " flip" : ""}`}
+                key={proj.id}
               >
-                {/* Project Image Card */}
-                <div className="relative h-80 rounded-xl overflow-hidden cursor-pointer mb-4 transition-all duration-500 group-hover:blur-sm">
-                  <Image
-                    src={proj.image}
-                    alt={proj.title}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="transition-transform duration-500 group-hover:scale-110"
-                  />
-                  
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300" />
-                </div>
-
-                {/* Hover Effect - Corner Indicator on Image */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
-                    <ArrowRight size={20} className="text-white" />
+                <div className="info r">
+                  <span className="num">proj / {pad(idx + 1)}</span>
+                  <span className="ptag">{proj.subtitle}</span>
+                  <h3>{proj.title}</h3>
+                  <p className="desc">{proj.achievements[0]}</p>
+                  <div className="tech">
+                    {proj.tech.map((t) => (
+                      <span key={t}>{t}</span>
+                    ))}
+                  </div>
+                  <div className="action">
+                    <a
+                      className={`plink${isLive ? " live" : ""}`}
+                      href={proj.github}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {isLive ? "Live Site" : "GitHub"}
+                      <ArrowOut />
+                    </a>
                   </div>
                 </div>
-
-                {/* Project Title & Subtitle - Outside Card */}
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    {proj.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{proj.subtitle}</p>
+                <div className="media">
+                  <div className="shot" style={{ aspectRatio: "16 / 9.6" }}>
+                    <span className="yr">{proj.year}</span>
+                    <Image
+                      src={proj.image}
+                      alt={proj.title}
+                      fill
+                      priority={idx === 0}
+                      loading={idx === 0 ? undefined : "eager"}
+                      sizes="(max-width: 880px) 100vw, 58vw"
+                    />
+                  </div>
                 </div>
-              </motion.div>
-            </Link>
-          ))}
-        </div>
+              </article>
+            )
+          })}
 
-        {/* View All Projects Button */}
-        <motion.div
-          className="flex justify-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Link href="/projects">
-            <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-blue-500/50 transition-all duration-300 flex items-center gap-2 group">
+          <div className="proj-foot r">
+            <Link className="btn btn-ghost" href="/projects">
               View All Projects
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </Link>
-        </motion.div>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </Link>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }

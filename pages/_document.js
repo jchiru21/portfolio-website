@@ -4,6 +4,12 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* progressive-enhancement flag: enables motion gating before paint */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: 'document.documentElement.classList.add("js")',
+          }}
+        />
         {/* Open Graph */}
         <meta property="og:title" content="Chiranjeevi Joshi — AI/ML Engineer" />
         <meta
@@ -28,7 +34,7 @@ export default function Document() {
           content="https://chiranjeevi-j.vercel.app/images/healifyai.png"
         />
       </Head>
-      <body className="antialiased">
+      <body className="antialiased" data-motion="full">
         <Main />
         <NextScript />
       </body>

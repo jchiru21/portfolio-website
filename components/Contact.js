@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+// components/Contact.js
 import { useState, useRef, useEffect } from "react"
 import emailjs from "@emailjs/browser"
 
@@ -7,6 +7,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({ email: "", message: "" })
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState("")
 
   useEffect(() => {
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
@@ -19,18 +20,20 @@ export default function Contact() {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
+    setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setError("")
     if (!formData.email || !formData.message) {
-      alert("Please fill in all fields")
+      setError("Please fill in all fields.")
       return
     }
 
     setLoading(true)
     try {
+      // success state is set ONLY after this promise resolves — never optimistically
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
@@ -43,66 +46,65 @@ export default function Contact() {
       setSubmitted(true)
       setFormData({ email: "", message: "" })
       setTimeout(() => setSubmitted(false), 3000)
-    } catch (error) {
-      console.error("Error sending email:", error)
-      alert("Failed to send message. Please try again.")
+    } catch (err) {
+      console.error("Error sending email:", err)
+      setError("Failed to send message. Please try again.")
     } finally {
       setLoading(false)
     }
   }
-  return (
-    <div id="contact" className="max-w-6xl mx-auto py-20 px-6">
-      <h2 className="text-4xl font-bold mb-12 text-center text-white">Let’s Connect</h2>
 
-      <div className="max-w-xl mx-auto">
-        {/* Direct Contact Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="glass-card p-8 h-auto flex flex-col"
-        >
-          <h3 className="text-xl font-bold mb-4">Direct</h3>
-          {submitted ? (
-            <div className="flex items-center justify-center h-full min-h-[200px]">
-              <p className="text-green-400 font-semibold">✓ Message sent successfully!</p>
-            </div>
-          ) : (
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-3 flex-1">
-              <div>
+  return (
+    <section className="section" id="contact" data-screen-label="Contact">
+      <div className="sec-grid">
+        <div className="sec-marker">
+          <span className="eyebrow" data-decode="// contact">{"// contact"}</span>
+        </div>
+        <div className="contact-grid">
+          <div className="r">
+            <h2 className="big">
+              Let&apos;s <span className="si">Connect</span>
+            </h2>
+          </div>
+          <div className="r" style={{ "--d": ".12s" }}>
+            <div className="lbl">Direct</div>
+            <form ref={formRef} onSubmit={handleSubmit}>
+              <div className="field">
                 <input
                   type="email"
                   name="email"
                   placeholder="Your email"
+                  aria-label="Your email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border-color)] text-white placeholder-gray-500 focus:outline-none focus:border-blue-400 transition"
                 />
               </div>
-              <div>
+              <div className="field">
                 <textarea
                   name="message"
                   placeholder="Your message"
+                  aria-label="Your message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows="4"
-                  className="w-full px-4 py-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border-color)] text-white placeholder-gray-500 focus:outline-none focus:border-blue-400 transition resize-none"
                 />
               </div>
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full px-4 py-2 bg-blue-600 rounded-lg text-white font-semibold hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
-              >
+              <button className="btn btn-primary" type="submit" disabled={loading}>
                 {loading ? "Sending..." : "Send Message"}
               </button>
+              {submitted && (
+                <p className="form-ok">✓ Message sent successfully!</p>
+              )}
+              {error && (
+                <p className="form-err" role="alert">
+                  {error}
+                </p>
+              )}
             </form>
-          )}
-        </motion.div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }

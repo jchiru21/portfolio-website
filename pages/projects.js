@@ -1,9 +1,7 @@
 // pages/projects.js
 import Head from "next/head"
-import Navbar from "../components/Navbar"
+import Layout from "../components/Layout"
 import AllProjects from "../components/AllProjects"
-import Footer from "../components/Footer"
-import ScrollToTop from "../components/ScrollToTop"
 
 export default function ProjectsPage() {
   return (
@@ -16,17 +14,9 @@ export default function ProjectsPage() {
         />
       </Head>
 
-      <main className="bg-[var(--bg-primary)] text-[var(--text-primary)] min-h-screen">
-        <Navbar />
-        
-        {/* Add padding to account for fixed navbar */}
-        <div className="pt-20">
-          <AllProjects />
-        </div>
-
-        <ScrollToTop />
-        <Footer />
-      </main>
+      <Layout>
+        <AllProjects />
+      </Layout>
     </>
   )
 }
